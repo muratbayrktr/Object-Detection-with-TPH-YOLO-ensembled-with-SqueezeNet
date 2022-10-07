@@ -1,41 +1,14 @@
-# Yarışmacılar için Örnek Sunucu Bağlantı Arayüzü
-Bu repository Teknofest Ulaşımda Yapay Zeka yarışması değerlendirme sunucusuna(TUYZDS) örnek bağlantının kurulması için geliştirilmiştir.
-Yarışmacılar örnek arayüzü ihtiyaçlarına göre güncelleyebilir yada farklı bir dil ile (C++, vs) benzerini implemente edebilirler.
+# Teknofest Competition 
+This repo is created in order to compete in Teknofest 2022 Artificial Intelligence in Transportation competetion and mainly focused on Object Detection of 4 classes: [Human, Vehicle, Emergency Ambulance Landing, Drone Landing] and classification of landing statuses whether available or not.
  
 
-# Kurulum
-- Sistem için bir sanal ortam oluşturulur. (Anaconda'nın kurulu olduğu varsayılmaktadır.)
-```shell
-$ conda create -n teknofest_yarisma python=3.7
-$ conda activate teknofest_yarisma
-```
-- Gerekli paketler yüklenir.
-```shell
-$ pip install -r requirements.txt
-```
-- `./config` klasorü altında bulunan `example.env` klasörü referans alınarak (kopyalanarak) `.env` isiminde bir dosya oluşturulur.
-- `.env` dosyasının içeriği teknofest tarafından verilen takım kullanıcı adı ve şifreleri ile güncellenerek kaydedilir. (Dikkat: Sonuçta oluşacak dosyanın yolu `./config/.env` şeklinde olacaktır.) 
-````text
-TEAM_NAME=takim_adi
-PASSWORD=sifre
-EVALUATION_SERVER_URL=http://teknofest.cezerirobot.com:2052/
-````
-- Kod içerisinde yorumlar dikkate alınarak gerekli düzenlemeler ve geliştirmeler yapılır. 
-  ```
-  NOT: 
-  İlk testinizde sadece `.env` dosyasında değişiklik yaparak sunucu iletişiminizi test edebilirsiniz. 
-  ```
-- Sistemi çalıştırmak için aşağıdaki komut çalıştırılır.
-````shell
-python main.py
-````
-# Yarışmacıların Modellerini Tanımlayacakları Kısımlar
-Yarışmacılar sağlanan sunucu haberleşme arayüzüne ait kodları modifiye etmeden, yanlızca ```object_detection_model.py``` içerisinde değişiklik yaparak modellerini sisteme entegre edebilirler.
-Geliştirilen modellerin ``ObjectDetectionModel`` sınıfına entegrasyonu ile ilgili detaylar kod içerisinde yorumlar ile belirtilmiştir.
+# Abstract
+With the integration of flying cars and drone technologies into human life, object detection using the bottom view cameras of these systems has gained critical importance. Unlike classical object detection problems, these autonomous systems need to detect in real time, in different environmental conditions and at high altitudes. The system we developed to solve this problem is TPH-YOLOv5, which is proposed as a solution to the VisDrone problem.
+combines this with a CNN model. By training this combined system with our dataset of 16000 images, we were able to reach 0.846 mAP on the 2nd session data provided by the competition committee.
 
-## Logların İncelenmesi
-Sistem çalışma esnasında gerçekleştirdiği işlemleri `_logs` klasörü altında kayıt altına almaktadır. Sistem hataları bu log dosyaları üzerinden takip edilebilir. Yarışma esnasında yapılacak itirazlarda log dosyası içeriği değerlendirmeye alınacaktır.
 
-# Sorumluluk Beyanı
-Bu sistem yarışmacılar için referans olarak sunulmuştur. Bu sistemi kullanmak kullanıcıların tercihine bağlıdır. Sağlanan sistem dolayısı ile oluşabilecek problemler yarışmacıların sorumluluğundadır.
-Yarışmacı takımlar sunucu ile sağlıklı iletişim kuracak yapıyı geliştirmek/test etmek sorumluluğundadır. Teknofest, sistemde değişiklik yapma hakkını saklı tutar.
+# Paper
+Inside the repo, access Teknofest_Final_Design_Report.pdf to read more about the project.
+
+
+# Results
