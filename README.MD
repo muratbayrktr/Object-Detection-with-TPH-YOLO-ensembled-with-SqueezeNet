@@ -17,7 +17,7 @@ Most of the classes are human and vehicles. Landing places are rare, that was a 
 
 
 # Dataset
-Multiple sources have used for data gathering. However, most of our collection consists of the videos that we have taken at METU campus.
+Multiple sources have used for data gathering. However, most of our collection consists of the videos that we have taken at METU campus.  
 ![Dataset](/media/dataset.png?raw=true "Dataset")
 
 # Architecture
